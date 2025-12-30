@@ -45,7 +45,48 @@ function userLoggedIn(username){
 }
 
 // console.log(userLoggedIn("Priyanshu"));
-console.log(userLoggedIn(""));  // just loggedin output
-console.log(userLoggedIn()); // undefined just loggedin
+// console.log(userLoggedIn(""));  // just loggedin output
+// console.log(userLoggedIn()); // undefined just loggedin
+
+
+// *************************************
+
+function calculateCartPrice(...num1){  //rest operator
+    return num1
+}
+
+// console.log(calculateCartPrice(200, 400, 500, 1000));
+
+//Passing Object in functon
+
+const user = {
+    name: "priyanshu",
+    price: 199
+}
+
+function handleObject(anyObject){
+    console.log(`username is ${anyObject.name} and price is ${anyObject.price}`);
+    
+}
+// handleObject(user)
+
+//one more way
+
+handleObject({
+    name:"tarun",
+    price:399
+})
+
+const myArray = [200, 400, 600]
+
+function returnSecondvalue(getArray){
+    return getArray[1]
+}
+
+// console.log(returnSecondvalue(myArray))
+
+console.log(returnSecondvalue([1000, 2000, 3000, 4000]));
+
+
 
 
