@@ -50,7 +50,7 @@ console.log(addTwo(4,3));
 
 
 // this technique use in React.js
-const addTwo = (num1, num2) => (num1 + num2)    // isko aese bhi likh sakte hain
+// const addTwo = (num1, num2) => (num1 + num2)    // isko aese bhi likh sakte hain
 
 const addTwoo = (num1, num2) => ({username:"tarun"})  // object ko aese likha jata hain implicite main
 console.log(addTwoo(3, 4));
