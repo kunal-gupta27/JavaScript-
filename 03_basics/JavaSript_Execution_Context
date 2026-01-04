@@ -1,0 +1,73 @@
+javaScript Execution Context
+
+[{}] -> global execution -> this keyword main pda tha
+
+1) global Execution Context
+2) Function Execution Context
+3) Eval Execution Context
+
+[{}]-> memory creation phase  or creation phase 
+     -> Execution phase
+
+     let val1 = 10;
+     let val2 = 5;
+     function addnum(num1,num2){
+        let total = num1+num2;
+        return total;
+     }
+     let result1 = addnum(val1, val2);
+     let result2 = addnum(2,3);
+
+     1) global execution -> this     
+     2) memory phase
+          val1->undefined
+          val2->undefined
+          addnum->defination of the function
+          result1->undefined
+          result2->undefined
+
+    3) Execution phase
+        val1 <- 10
+        val2 <- 5
+        addnum -> create (new variable environment + Execution thread)   //iska kaam hone kai baad yai [delete] bhi hota hain
+        <-
+        <-
+        1) Memory phase                        2)Execution Context
+
+        val1->undefined                         num1->10
+        val2->undefined                         num2->5
+        total->undefined                       ( total->15  ) -> total ka execution global execution main return ho jaayega  
+
+        result1 -> 15
+        result2 -> 5
+        <-
+        <-
+        Again create hoga (new variable environment + Execution thread)
+
+//Again repeat hugi chize
+        1) Memory Phase                         2)Execution Phase
+
+        val1->undefined                         num1->10
+        val2->undefined                         num2->5
+        total->undefined                       ( total->15  ) -> total ka execution global execution main return ho jaayega
+
+ // Call Context
+  // Lifo Concept pr hota hain
+     |_______________|
+     |               |
+     |_______________|        //one()
+     |               |       
+     |_______________|
+     |               |  
+     |_______________|             //two()
+     |               |
+     |_______________|
+     |               |
+     |_______________|
+     |               |       //three()   //yai teeno ek ek ke execute hunge phir baar chale jayenge
+     |_______________|
+     |               |
+     |_______________|
+     |Global Exec.   |
+     |_______________|
+     
