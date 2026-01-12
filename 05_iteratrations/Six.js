@@ -5,3 +5,5 @@ const values = coding.forEach((item)=> {
     
 })
 console.log(values);   //foreach loopvalue ko return nhi krta
+
+
