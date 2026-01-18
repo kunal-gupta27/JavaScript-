@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // add li in js
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage("python")
+    addLanguage("Java")
+    addLanguage("typescript")
+
+    // optimize way -> add the value
+    function addOptLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptLanguage("Golang")
+
+    // for edit the value
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    
+    // secondLang.innerHTML = "mojo"  //  it is not a optimize way
+   const newli =  document.createElement('li')  //new element banaya hain yaha pr
+   newli.textContent = "Mojo"     // textContent ki jagah -> innerHTML bhi use kr sakte hain optimize kai liye
+   secondLang.replaceWith(newli)
+
+   // edit example
+   const firstLang = document.querySelector("li:first-child")
+   firstLang.outerHTML =  '<li>TypeScript</li>'
+
+   // removeing the value
+
+   const lastLang = document.querySelector("li:last-child")
+   lastLang.remove()
+
+</script>
+</html>
