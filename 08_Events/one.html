@@ -20,10 +20,78 @@
     </div>   
 </body>
 <script>
-    // document.getElementById('owl').onclick = function(){
-    //     alert('owl clicked')
-    // }  // it is not the efficient way
+    document.getElementById('owl').onclick = function(){
+        alert('owl clicked')
+    }  // it is not the efficient way
 
-    document.getElementById('owl').addEventListener('click', function(){}, false)
+    //by default likhne kii jarurt nhi hoti
+    document.getElementById('owl').addEventListener('click', function(){
+        alert("owl clicked again")  // it is best approach too add events
+    })   //addEventListner main 3 parameter hote hain last one false hotta hain josko
+    
+    //one approach more -> attachEvent()
+    // one more -> jQuery -> direct on event hota hain
+
+    //learning about event object
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log(e)
+    }, false)
+
+    //for interview what we learn about
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+
+    //important
+    // clientX, clinetY, screenX, screenY
+
+    //altKey, ctrlKey, shiftKey, keyCode
+
+    //what is EventPropogation -> two methods hote hain
+
+    //bubbleevents
+    //
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false)  //yai tab print hoga jab hum apne images kai ul kai andr click karinge
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked") //yai jab picture ko click karinge
+        //stop krne kai liye
+        e.stopPropagation()
+    }, false)
+
+
+    // //Example of prventDefault
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("google clicked");
+    }, false)
+
+
+    document.querySelector("#images").addEventListener
+    ('click', function(e){
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.targetparentNode
+            removeIt.remove();   
+        }
+
+        // removeIt.parentNode.removeChild(removeIt)
+
+        
+    }, false)
+
+
+
+
+
+
+
+
 </script>
 </html>
