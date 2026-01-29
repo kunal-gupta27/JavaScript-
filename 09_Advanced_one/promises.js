@@ -135,6 +135,7 @@ fetch('https://api.github.com/users/kunal-gupta27')
     console.log(data);
     
 })
+
 .catch((error) => console.log(error));
 
 
