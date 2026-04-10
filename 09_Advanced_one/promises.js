@@ -53,14 +53,14 @@ const promiseFour = new Promise(function(resolve, reject){
 })
 
 
-//callback hell kaise avoid kiya jaata -> discussing here
-// const username = promiseFour.then((user)=>{
-//     console.log(user);
-//     return user.username    //data nikalne kai liye aesa kkaam nhi kr sakte hain
+callback hell kaise avoid kiya jaata -> discussing here
+const username = promiseFour.then((user)=>{
+    console.log(user);
+    return user.username    //data nikalne kai liye aesa kkaam nhi kr sakte hain
     
-// })
+})
 
-// console.log(username);
+console.log(username);
 
 
 promiseFour.then((user)=>{
@@ -91,12 +91,12 @@ const promiseFive = new Promise(function(resolve, reject){
     }, 1000)
 });
 
-// promiseFive.then()   //isme main isko kisi aur tareke sai kr rha hu
+promiseFive.then()   //isme main isko kisi aur tareke sai kr rha hu
 
 //async kai sath humko try catch use krna hota hain
 async function consumePromiseFive(){
-    // const response = await promiseFive
-    // console.log(response);
+    const response = await promiseFive
+    console.log(response);
     try {
         const response = await promiseFive
         console.log(response);
@@ -112,19 +112,19 @@ consumePromiseFive()
 
 //*********************************** */
 
-// async function getAllUsers(){
+async function getAllUsers(){
     
-//     try {
-//         const response = await fetch('https://api.github.com/users/kunal-gupta27')
-//         // console.log(response);
+    try {
+        const response = await fetch('https://api.github.com/users/kunal-gupta27')
+        // console.log(response);
         
-//         const data = await response.json()
-//         console.log(data);
-//     } catch (error) {
-//         console.log("E: ", error);
-//     }
-// }
-// getAllUsers()
+        const data = await response.json()
+        console.log(data);
+    } catch (error) {
+        console.log("E: ", error);
+    }
+}
+getAllUsers()
 
 
 fetch('https://api.github.com/users/kunal-gupta27')
