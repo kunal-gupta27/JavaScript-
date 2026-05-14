@@ -9,12 +9,12 @@ if(userEmail){
 
 //falsy values
 
-// false, 0, -0, BigInt 0n, "", null, undefined, Nan(Not a number)
+false, 0, -0, BigInt 0n, "", null, undefined, Nan(Not a number)
 
 
 //truthy values
 
-//true, "0"->this is also truthy, 'false', " ", [], {}, function(){}->also truthy //empty function
+true, "0"->this is also truthy, 'false', " ", [], {}, function(){}->also truthy //empty function
 
 
 if (userEmail.length ===  0) {
