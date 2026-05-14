@@ -1,5 +1,4 @@
 // create promises 
-
 const promiseOne = new Promise(function(resolve, reject){
     // Do an async task
     //DB calls, crptography, network
@@ -8,7 +7,6 @@ const promiseOne = new Promise(function(resolve, reject){
         resolve()
     }, 1000)
 })
-
 // then ka sidha connection hain resolve kai sath
 promiseOne.then(function(){
     console.log("Promise consumed");
@@ -26,8 +24,7 @@ new Promise(function(resolve, reject){
     console.log("Async 2 resolved");
     
 })
-
-// Making Promise Three
+// Making Promise of Three 
 const promiseThree = new Promise(function(resolve, reject){
     setTimeout(function(){
         resolve({username: "Chai", email:"chai@example.com"})
@@ -35,12 +32,11 @@ const promiseThree = new Promise(function(resolve, reject){
 })
 
 promiseThree.then(function(user){
-    console.log(user);   //output-> { username: 'Chai', email: 'chai@example.com' }
+    console.log(user);   // it shows output-> { username: 'Chai', email: 'chai@example.com' }
     
 })
 
 //Making Fourth Promise
-
 const promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
         let error = true
@@ -53,7 +49,8 @@ const promiseFour = new Promise(function(resolve, reject){
 })
 
 
-callback hell kaise avoid kiya jaata -> discussing here
+// callback hell kaise avoid kiya jaata -> discussing here
+
 const username = promiseFour.then((user)=>{
     console.log(user);
     return user.username    //data nikalne kai liye aesa kkaam nhi kr sakte hain
